@@ -1,0 +1,32 @@
+<p>
+  <strong>Blurb:</strong>
+  <%= @scene.blurb %>
+</p>
+
+<p>
+  <strong>Prompt:</strong>
+  <%= @scene.prompt %>
+</p>
+ 
+<p>
+  <strong>Choice A:</strong>
+  <%= @scene.choiceA %>
+</p>
+
+<p>
+  <strong>Choice B:</strong>
+  <%= @scene.choiceB %>
+</p>
+
+<p>
+  <strong>Path A:</strong>
+  <%= @scene.pathA %>
+</p>
+
+<p>
+  <strong>Path B:</strong>
+  <%= @scene.pathB %>
+</p>
+
+<%= link_to 'Edit', edit_scene_path(@scene) %> |
+<%= link_to 'Back', scenes_path %>

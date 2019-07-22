@@ -1,0 +1,40 @@
+<h1>New Scene</h1>
+
+
+<%= form_with scope: :scene, url: scenes_path, local: true do |form| %>
+  <p>
+    <%= form.label :blurb %><br>
+    <%= form.text_field :blurb %>
+  </p>
+ 
+  <p>
+    <%= form.label :prompt %><br>
+    <%= form.text_area :prompt %>
+  </p>
+
+   <p>
+    <%= form.label :choiceA %><br>
+    <%= form.text_area :choiceA %>
+  </p>
+
+   <p>
+    <%= form.label :choiceB %><br>
+    <%= form.text_area :choiceB %>
+  </p>
+
+   <p>
+    <%= form.label :pathA %><br>
+    <%= form.text_field :pathA %>
+  </p>
+
+   <p>
+    <%= form.label :pathB %><br>
+    <%= form.text_field :pathB %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', scenes_path %>

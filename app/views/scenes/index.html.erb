@@ -1,0 +1,32 @@
+
+<h1>Scene Directory</h1>
+
+<%= link_to 'New scene', new_scene_path %>
+ 
+<table>
+  <tr>
+    <th>Blurb</th>
+    <th>Prompt</th>
+    <th>Choice A</th>
+    <th>Choice B</th>
+    <th>Path A</th>
+    <th>Path B</th>
+    <th></th>
+  </tr>
+ 
+  <% @scenes.each do |scene| %>
+    <tr>
+      <td><%= scene.blurb %></td>
+      <td><%= scene.prompt %></td>
+      <td><%= scene.choiceA %></td>
+      <td><%= scene.choiceB %></td>
+      <td><%= scene.pathA %></td>
+      <td><%= scene.pathB %></td>
+      <td><%= link_to 'Show', scene_path(scene) %></td>
+      <td><%= link_to 'Edit', edit_scene_path(scene) %></td>
+      <td><%= link_to 'Destroy', scene_path(scene),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
