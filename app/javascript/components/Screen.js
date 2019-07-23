@@ -1,9 +1,5 @@
 import React from "react";
-import Typer from "components/Typer";
-//import Typing from "react-typing-animation";
 import Typist from "react-typist";
-import ReactTypingEffect from "react-typing-effect";
-import AnimateOnChange from "react-animate-on-change";
 
 class Screen extends React.Component {
   state = {
@@ -36,7 +32,12 @@ class Screen extends React.Component {
       <div id="Container">
         <div id="screen">
           <div id="promptContainer">
-            <Typist key={this.props.prompt}>{this.props.prompt}</Typist>
+            <Typist
+              key={this.props.prompt}
+              onTypingDone={this.props.typingDone}
+            >
+              {this.props.prompt}
+            </Typist>
           </div>
           <div id="choicesContainer" className={this.props.choiceDisplay}>
             <div id="choiceA" className={this.state.choiceA}>
