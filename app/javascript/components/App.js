@@ -3,8 +3,16 @@ import Screen from "components/Screen";
 import axios from "axios";
 import "../css/App.css";
 import "react-typist/dist/Typist.css";
+import click1 from "components/audio/click1.wav";
+import press from "components/audio/press.mp3";
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.click1 = new Audio(click1);
+    this.press = new Audio(press);
+  }
+
   state = {
     blurb: "",
     prompt: "",
@@ -30,6 +38,10 @@ class App extends React.Component {
     if (this.state.typing) {
       console.log("TYPING!");
     } else {
+      this.press.play();
+      this.setState({
+        choiceDisplay: "none"
+      });
       let path;
       if (button == "choiceA") {
         this.setState({
@@ -44,20 +56,20 @@ class App extends React.Component {
         });
         path = this.state.pathB;
       }
-
-      axios.get(`/show?blurb=${path}`).then(res => {
-        const d = res.data;
-        this.setState({
-          prompt: d.prompt,
-          choiceA: d.choiceA,
-          choiceB: d.choiceB,
-          pathA: d.pathA,
-          pathB: d.pathB,
-          choiceDisplay: "none",
-          typing: true
+      setTimeout(() => {
+        axios.get(`/show?blurb=${path}`).then(res => {
+          const d = res.data;
+          this.setState({
+            prompt: d.prompt,
+            choiceA: d.choiceA,
+            choiceB: d.choiceB,
+            pathA: d.pathA,
+            pathB: d.pathB,
+            typing: true
+          });
+          this.speak();
         });
-        this.speak();
-      });
+      }, 500);
     }
   };
 

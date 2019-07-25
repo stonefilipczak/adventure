@@ -1,30 +1,51 @@
 import React from "react";
 import Typist from "react-typist";
+import click from "components/audio/click.mp3";
+import click2 from "components/audio/click2.mp3";
 
 class Screen extends React.Component {
+  constructor(props) {
+    super(props);
+    this.click = new Audio(click);
+    this.click2 = new Audio(click2);
+  }
   state = {
     animate: true,
     choiceA: "",
     choiceB: ""
   };
 
+  play = audio => {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.currentTime = 0;
+    }
+  };
+
   choiceToggle = button => {
-    button == "choiceA"
-      ? this.setState({
-          choiceA: "green",
-          choiceB: "red"
-        })
-      : this.setState({
-          choiceA: "red",
-          choiceB: "green"
-        });
+    if (this.props.choiceDisplay == "fade") {
+      this.play(this.click);
+      button == "choiceA"
+        ? this.setState({
+            choiceA: "green",
+            choiceB: "red"
+          })
+        : this.setState({
+            choiceA: "red",
+            choiceB: "green"
+          });
+    }
   };
 
   choiceReset = () => {
-    this.setState({
-      choiceA: "",
-      choiceB: ""
-    });
+    if (this.props.choiceDisplay == "fade") {
+      this.play(this.click2);
+      this.setState({
+        choiceA: "",
+        choiceB: ""
+      });
+    }
   };
 
   render() {

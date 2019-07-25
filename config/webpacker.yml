@@ -32,6 +32,8 @@ default: &default
     - .ttf
     - .woff
     - .woff2
+    - .wav
+    - .mp3
 
   extensions:
     - .jsx
@@ -71,10 +73,9 @@ development:
     use_local_ip: false
     quiet: false
     headers:
-      'Access-Control-Allow-Origin': '*'
+      "Access-Control-Allow-Origin": "*"
     watch_options:
-      ignored: '**/node_modules/**'
-
+      ignored: "**/node_modules/**"
 
 test:
   <<: *default
