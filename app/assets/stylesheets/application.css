@@ -13,3 +13,236 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-size: 70px;
+  background-color: white;
+  font-family: "Courier New", Courier, monospace;
+  /* background-image: repeating-linear-gradient(rgb(71, 71, 71) 15%, white 20%);
+   */
+}
+
+#promptContainer {
+  /* border-style: solid;
+    background-color: white; */
+  color: white;
+  width: 95%;
+  margin-top: 10px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2px;
+  max-height: 80%;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column-reverse;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+#prompt {
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+}
+
+.type {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: typing 1.5s steps(40, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+button {
+  width: 200px;
+  height: 150px;
+  font-size: auto;
+  border-width: 10px;
+  border-color: white;
+  border-radius: 50%;
+  font-size: 30px;
+  margin-top: 15px;
+  margin-left: 40px;
+  margin-right: 40px;
+  /* background-color: brown; */
+  color: black;
+  /* text-shadow: 2px 2px black; */
+
+  overflow-wrap: break-word;
+  animation-duration: 1s;
+  animation-name: hide-reverse;
+  background-image: repeating-radial-gradient(rgb(71, 71, 71) 15%, white 20%);
+  cursor: grab;
+  outline: none;
+  box-shadow: 0px 10px black;
+}
+
+.reverse {
+  /* animation-duration: 0.1s;
+    animation-name: hide-reverse; */
+}
+.hide {
+  animation-duration: 0.1s;
+  animation-name: hide;
+  /* display: none; */
+  /* background-color: black;
+    margin-left: 50px; */
+  margin-top: 25px;
+  text-shadow: none;
+  box-shadow: none;
+  color: white;
+}
+
+@keyframes hide {
+  from {
+    /* margin-left: 40px; */
+    margin-top: 15px;
+    box-shadow: 0px 10px black;
+    color: white;
+  }
+
+  to {
+    /* margin-left: 50px; */
+    /* background-color: black; */
+    /* margin-top: 350px; */
+    margin-top: 25px;
+    box-shadow: 0px 0px black;
+    color: white;
+  }
+}
+
+@keyframes hide-reverse {
+  from {
+    /* margin-left: 50px; */
+    /* background-color: black; */
+    /* margin-top: 350px; */
+    margin-top: 25px;
+    box-shadow: 0px 0px black;
+    text-shadow: none;
+    color: white;
+    /* margin-left: 40px; */
+  }
+
+  to {
+    /* margin-left: 40px; */
+    margin-top: 15px;
+    box-shadow: 0px 10px black;
+    text-shadow: none;
+    color: white;
+  }
+}
+
+#Container {
+  /* overflow: hidden; */
+
+  overflow-wrap: break-word;
+
+  /* background-image: repeating-linear-gradient(rgb(71, 71, 71) 15%, white 20%); */
+  /* height: 800px; */
+  justify-content: center;
+  vertical-align: middle;
+  margin-top: 20px;
+}
+
+#buttonContainer {
+  border-bottom: 200px solid red;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  height: 0px;
+  width: 600px;
+  margin: auto;
+  /* width: 600px;
+    height: 320px;
+    transform: skew(-20deg);
+    background: red; */
+  box-shadow: 0px 50px black;
+  place-content: absolute;
+  /* transform: skew(-10deg); */
+  align-content: center;
+  flex-wrap: wrap;
+  border-radius: 2%;
+}
+
+#buttonA {
+  float: left;
+}
+
+#buttonB {
+  float: right;
+}
+
+#screen {
+  border-style: solid;
+  border-width: 12px;
+  border-radius: 1%;
+  width: 575px;
+  margin: auto;
+  height: 475px;
+  background-image: url(https://picsum.photos/id/678/575/475?grayscale);
+  position: relative;
+  align-content: center;
+}
+
+#choicesContainer {
+  position: absolute;
+  bottom: 0;
+  width: 550px;
+  font-size: 17px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.fade {
+  animation-name: fade-in;
+  animation-duration: 1s;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+#choiceA {
+  float: left;
+  margin-left: 30px;
+  max-width: 40%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.493), rgba(0, 0, 0, 0.466));
+  border-radius: 2px;
+}
+#choiceB {
+  float: right;
+  max-width: 40%;
+  margin-right: 30px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.473));
+  border-radius: 2px;
+}
+
+.red {
+  color: red;
+
+  text-decoration: line-through;
+  text-shadow: 1px 1px black;
+}
+
+.green {
+  color: rgb(164, 255, 122);
+  text-shadow: 1px 1px black;
+}
+
+.none {
+  display: none;
+}
