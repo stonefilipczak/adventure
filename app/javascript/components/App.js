@@ -1,7 +1,7 @@
 import React from "react";
 import Screen from "components/Screen";
 import axios from "axios";
-import "react-typist/dist/Typist.css";
+
 import click1 from "components/audio/click1.wav";
 import press from "components/audio/press.mp3";
 

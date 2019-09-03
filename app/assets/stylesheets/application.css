@@ -15,9 +15,7 @@
  */
 
 body {
-  font-size: 70px;
   background-color: white;
-  font-family: "Courier New", Courier, monospace;
   /* background-image: repeating-linear-gradient(rgb(71, 71, 71) 15%, white 20%);
    */
 }
@@ -38,6 +36,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  font-family: "Courier New", Courier, monospace;
 }
 
 #prompt {
@@ -45,6 +44,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
   margin: 0 auto;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .type {
@@ -87,16 +87,9 @@ button {
   box-shadow: 0px 10px black;
 }
 
-.reverse {
-  /* animation-duration: 0.1s;
-    animation-name: hide-reverse; */
-}
 .hide {
   animation-duration: 0.1s;
   animation-name: hide;
-  /* display: none; */
-  /* background-color: black;
-    margin-left: 50px; */
   margin-top: 25px;
   text-shadow: none;
   box-shadow: none;
@@ -105,16 +98,12 @@ button {
 
 @keyframes hide {
   from {
-    /* margin-left: 40px; */
     margin-top: 15px;
     box-shadow: 0px 10px black;
     color: white;
   }
 
   to {
-    /* margin-left: 50px; */
-    /* background-color: black; */
-    /* margin-top: 350px; */
     margin-top: 25px;
     box-shadow: 0px 0px black;
     color: white;
@@ -123,18 +112,13 @@ button {
 
 @keyframes hide-reverse {
   from {
-    /* margin-left: 50px; */
-    /* background-color: black; */
-    /* margin-top: 350px; */
     margin-top: 25px;
     box-shadow: 0px 0px black;
     text-shadow: none;
     color: white;
-    /* margin-left: 40px; */
   }
 
   to {
-    /* margin-left: 40px; */
     margin-top: 15px;
     box-shadow: 0px 10px black;
     text-shadow: none;
@@ -143,12 +127,7 @@ button {
 }
 
 #Container {
-  /* overflow: hidden; */
-
   overflow-wrap: break-word;
-
-  /* background-image: repeating-linear-gradient(rgb(71, 71, 71) 15%, white 20%); */
-  /* height: 800px; */
   justify-content: center;
   vertical-align: middle;
   margin-top: 20px;
@@ -222,6 +201,7 @@ button {
   max-width: 40%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.493), rgba(0, 0, 0, 0.466));
   border-radius: 2px;
+  font-family: "Courier New", Courier, monospace;
 }
 #choiceB {
   float: right;
@@ -229,6 +209,7 @@ button {
   margin-right: 30px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.473));
   border-radius: 2px;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .red {
@@ -245,4 +226,24 @@ button {
 
 .none {
   display: none;
+}
+
+.Typist .Cursor {
+  display: inline-block;
+}
+.Typist .Cursor--blinking {
+  opacity: 1;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
